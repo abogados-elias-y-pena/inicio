@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abogado Hugo</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 1rem 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Hero section styles */
+        .hero {
+            background-image: url('https://rlzjlxjvwdxqgxjjqxwg.supabase.co/storage/v1/object/public/images/lawyer-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+        .hero-content {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 5px;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #1a1a1a;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #e6c200;
+        }
+
+        /* Practice areas styles */
+        .practice-areas {
+            padding: 4rem 0;
+            background-color: #f4f4f4;
+        }
+        .practice-areas h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .area-card {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .area-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* About section styles */
+        .about {
+            padding: 4rem 0;
+        }
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .about-image {
+            flex: 1;
+        }
+        .about-image img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        .about-text {
+            flex: 1;
+        }
+
+        /* Contact form styles */
+        .contact {
+            padding: 4rem 0;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+        .contact h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group textarea {
+            height: 150px;
+        }
+        .submit-button {
+            background-color: #ffd700;
+            color: #1a1a1a;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .submit-button:hover {
+            background-color: #e6c200;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .about-content {
+                flex-direction: column;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <section id="09">
+        <header>
+            <nav class="container">
+                <div class="logo">
+                    <a href="#09">Abogado Hugo</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#practice-areas">Areas Especializadas</a></li>
+                    <li><a href="#about">Acerca de Nosotros</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>    
+    </section>
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Soluciones legales especializadas para sus necesidades</h1>
+                    <p>Dedicado a proteger sus derechos y lograr los mejores resultados posibles.</p>
+                    <a href="#contact" class="cta-button">Citas</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="practice-areas" class="practice-areas">
+            <div class="container">
+                <h2>Areas Especializadas</h2>
+                <div class="areas-grid">
+                    <div class="area-card">
+                        <h3>Derecho de Familia</h3>
+                        <p>Casos de divorcio, custodia de menores y adopción.</p>
+                    </div>
+                    <div class="area-card">
+                        <h3>Defensa Penal</h3>
+                        <p>Protección de sus derechos en procedimientos penales.</p>
+                    </div>
+                    <div class="area-card">
+                        <h3>Lesiones Personales</h3>
+                        <p>Indemnización por accidentes y lesiones.</p>
+                    </div>
+                    <div class="area-card">
+                        <h3>Derecho Comercial</h3>
+                        <p>Asesoramiento legal para empresas de todos los tamaños.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="https://rlzjlxjvwdxqgxjjqxwg.supabase.co/storage/v1/object/public/images/lawyer-office.jpg" alt="Law office">
+                    </div>
+                    <div class="about-text">
+                        <h2>Acerca de [...]</h2>
+                        <p>Descripción de [...]</p>
+                        <p>Frase sobre [...]</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contáctanos</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">No. de Teléfono</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024. Todos los Derechos Reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
