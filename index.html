@@ -294,16 +294,16 @@
         <section id="01" class"practice-areas">
             <div class="container-4">
                 <h2>Áreas Especializadas</h2>
-                <select id=areaSelect">
-                    <option value="none">Selecciona una área</option>
+                <select id=fruitSelect">
+                    <option value="a">Selecciona una área</option>
                     <option value="manzana">Área 1</option>
                     <option value="banana">Área 2</option>
                     <option value="naranja">Área 3</option>
                     <option value="fresa">Área 4</option>
                 </select>
 
-            <div id="noneContainer" class="container-5">
-               
+            <div id="aContainer" class="container-5">
+               <h2>Selecciona una Área</h2>
             </div>
                 
             <div id="manzanaContainer" class="container-5">
@@ -327,7 +327,7 @@
             </div>
 
             <script>
-                document.getElementById('areaSelect').addEventListener('change', function() {
+                document.getElementById('fruitSelect').addEventListener('change', function() {
                 // Ocultar todos los contenedores
                     var containers = document.getElementsByClassName('container-5');
                     for (var i = 0; i < containers.length; i++) {
