@@ -45,6 +45,19 @@
              color: #1a1a1a;
             text-decoration: underline; /* Subrayado al pasar el ratón */
         }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .container-4 {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            display: none;
+        }
         button-2 {
             padding: 10px 20px;
             font-size: 16px;
@@ -271,7 +284,57 @@
                 </div>
             </div>
         </section>
+        <section id="01" class"practice-areas">
+            <div class="container-4">
+                <h2>Áreas Especializadas</h2>
+                <select id="frutaSelect">
+                    <option value="">Selecciona una área</option>
+                    <option value="manzana">Área 1</option>
+                    <option value="banana">Área 2</option>
+                    <option value="naranja">Área 3</option>
+                    <option value="fresa">Área 4</option>
+                </select>
 
+            <div id="manzanaContainer" class="container">
+               <h2>Área 1</h2>
+               <p>Poner lo que sea.</p>
+            </div>
+
+            <div id="bananaContainer" class="container">
+                <h2>Área 2</h2>
+                <p>Poner lo que sea.</p>
+            </div>
+
+            <div id="naranjaContainer" class="container">
+                <h2>Área 3</h2>
+                <p>Poner lo que sea.</p>
+            </div>
+
+            <div id="fresaContainer" class="container">
+                <h2>Área 4</h2>
+                <p>Poner lo que sea.</p>
+            </div>
+
+            <script>
+                document.getElementById('frutaSelect').addEventListener('change', function() {
+                // Ocultar todos los contenedores
+                    var containers = document.getElementsByClassName('container');
+                    for (var i = 0; i < containers.length; i++) {
+                        containers[i].style.display = 'none';
+                    }
+
+                    // Mostrar el contenedor seleccionado
+                        var selectedValue = this.value;
+                    if (selectedValue) {
+                        var selectedContainer = document.getElementById(selectedValue + 'Container');
+                        if (selectedContainer) {
+                            selectedContainer.style.display = 'block';
+                        }
+                }
+                });
+            </script>
+            </div>
+        </section>
         <section id="practice-areas" class="practice-areas">
             <div class="container">
                 <h2>Areas Especializadas</h2>
