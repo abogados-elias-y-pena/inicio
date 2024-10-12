@@ -58,6 +58,13 @@
             border-radius: 5px;
             display: none;
         }
+        .container-5 {
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            height: 10vh; /* Altura del contenedor */
+            background-color: #1a1a1a;
+        }
         button-2 {
             padding: 10px 20px;
             font-size: 16px;
@@ -295,22 +302,22 @@
                     <option value="fresa">Área 4</option>
                 </select>
 
-            <div id="manzanaContainer" class="container">
+            <div id="manzanaContainer" class="container-5">
                <h2>Área 1</h2>
                <p>Poner lo que sea.</p>
             </div>
 
-            <div id="bananaContainer" class="container">
+            <div id="bananaContainer" class="container-5">
                 <h2>Área 2</h2>
                 <p>Poner lo que sea.</p>
             </div>
 
-            <div id="naranjaContainer" class="container">
+            <div id="naranjaContainer" class="container-5">
                 <h2>Área 3</h2>
                 <p>Poner lo que sea.</p>
             </div>
 
-            <div id="fresaContainer" class="container">
+            <div id="fresaContainer" class="container-5">
                 <h2>Área 4</h2>
                 <p>Poner lo que sea.</p>
             </div>
@@ -318,7 +325,7 @@
             <script>
                 document.getElementById('frutaSelect').addEventListener('change', function() {
                 // Ocultar todos los contenedores
-                    var containers = document.getElementsByClassName('container');
+                    var containers = document.getElementsByClassName('container-5');
                     for (var i = 0; i < containers.length; i++) {
                         containers[i].style.display = 'none';
                     }
