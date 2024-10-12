@@ -266,22 +266,23 @@
 </head>
 <body>
     
-    <section id="09">
-        <header>
-            <nav class="container">
-                <div class="logo">
-                    <img src="https://abogados-elias-y-pena.github.io/Image2/logo.png" alt="logo" width="75" height="75">
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#home">Inicio</a></li>
-                    <li><a href="#practice-areas">Areas Especializadas</a></li>
-                    <li><a href="#about">Acerca de Nosotros</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
-            </nav>
-        </header>    
-    </section>
-    <main>
+        <section id="09">
+            <header>
+                <nav class="container">
+                    <div class="logo">
+                        <img src="https://abogados-elias-y-pena.github.io/Image2/logo.png" alt="logo" width="75" height="75">
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#practice-areas">Areas Especializadas</a></li>
+                        <li><a href="#about">Acerca de Nosotros</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </nav>
+            </header>    
+        </section>
+        <main>
+        
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
@@ -291,57 +292,59 @@
                 </div>
             </div>
         </section>
-        <section id="01" class"practice-areas">
+        
+        <section id="01" class="practice-areas">
             <div class="container-4">
                 <h2>Áreas Especializadas</h2>
-                <select id=fruitSelect">
-                    <option value="">Selecciona una área</option>
-                    <option value="manzana">Área 1</option>
-                    <option value="banana">Área 2</option>
-                    <option value="naranja">Área 3</option>
-                    <option value="fresa">Área 4</option>
-                </select>
-                
-            <div id="manzanaContainer" class="container-5">
-               <h2>Área 1</h2>
-               <p>Poner lo que sea.</p>
-            </div>
+                    <select id="fruitSelect">
+                        <option value="">Selecciona una área</option>
+                        <option value="manzana">Área 1</option>
+                        <option value="banana">Área 2</option>
+                        <option value="naranja">Área 3</option>
+                        <option value="fresa">Área 4</option>
+                    </select>
+        
+                <div id="manzanaContainer" class="container-5" style="display: none;">
+                    <h2>Área 1</h2>
+                    <p>Poner lo que sea.</p>
+                </div>
+   
+                <div id="bananaContainer" class="container-5" style="display: none;">
+                    <h2>Área 2</h2>
+                    <p>Poner lo que sea.</p> 
+                </div>
+ 
+                <div id="naranjaContainer" class="container-5" style="display: none;">  
+                    <h2>Área 3</h2>
+                    <p>Poner lo que sea.</p>
+                </div>
 
-            <div id="bananaContainer" class="container-5">
-                <h2>Área 2</h2>
-                <p>Poner lo que sea.</p>
-            </div>
+                <div id="fresaContainer" class="container-5" style="display: none;">
+                    <h2>Área 4</h2>
+                    <p>Poner lo que sea.</p>
+                </div>
 
-            <div id="naranjaContainer" class="container-5">
-                <h2>Área 3</h2>
-                <p>Poner lo que sea.</p>
-            </div>
-
-            <div id="fresaContainer" class="container-5">
-                <h2>Área 4</h2>
-                <p>Poner lo que sea.</p>
-            </div>
-
-            <script>
-                document.getElementById('fruitSelect').addEventListener('change', function() {
-                // Ocultar todos los contenedores
+                <script>
+                    document.getElementById('fruitSelect').addEventListener('change', function() {
+                    // Ocultar todos los contenedores
                     var containers = document.getElementsByClassName('container-5');
                     for (var i = 0; i < containers.length; i++) {
                         containers[i].style.display = 'none';
                     }
 
                     // Mostrar el contenedor seleccionado
-                        var selectedValue = this.value;
+                    var selectedValue = this.value;
                     if (selectedValue) {
                         var selectedContainer = document.getElementById(selectedValue + 'Container');
                         if (selectedContainer) {
                             selectedContainer.style.display = 'block';
+                            }
                         }
-                }
-                });
-            </script>
+                    });
+                </script>
             </div>
         </section>
+        
         <section id="practice-areas" class="practice-areas">
             <div class="container">
                 <h2>Areas Especializadas</h2>
