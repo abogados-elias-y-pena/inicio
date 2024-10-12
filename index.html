@@ -22,20 +22,20 @@
             margin: 0 auto;
         }
 
+        .container-1:last-of-type a {
+            color: white;
+            text-decoration: none; /* Sin subrayado por defecto */
+        }
+        .container-1:last-of-type a:hover {
+             color: white;
+            text-decoration: underline; /* Subrayado al pasar el ratón */
+        }
         .container-2 {
             display: flex;
             justify-content: center; /* Centra horizontalmente */
             align-items: center; /* Centra verticalmente */
             height: 10vh; /* Altura del contenedor */
             background-color: #1a1a1a;
-        }
-        .container:last-of-type a {
-            color: white;
-            text-decoration: none; /* Sin subrayado por defecto */
-        }
-        .container:last-of-type a:hover {
-             color: white;
-            text-decoration: underline; /* Subrayado al pasar el ratón */
         }
         button-2 {
             padding: 10px 20px;
@@ -350,7 +350,7 @@
     </main>
 
     <footer>
-        <div class="container">
+        <div class="container-1">
             <p>
                 <a href="https://programmer-hugo.github.io/about-me/">Hecho por Hugo Elias</a>
             </p>
