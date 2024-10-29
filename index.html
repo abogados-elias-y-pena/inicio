@@ -246,6 +246,67 @@
             text-align: center;
             padding: 1rem 0;
         }
+        .hamburger-button {
+            display: inline-block;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            padding: 15px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hamburger-line {
+            width: 30px;
+            height: 3px;
+            background-color: #333;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .hamburger-button:hover .hamburger-line {
+            background-color: #555;
+        }
+
+        .hamburger-button.open .line1 {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger-button.open .line2 {
+            opacity: 0;
+        }
+
+        .hamburger-button.open .line3 {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .menu {
+            display: none;
+            padding: 20px;
+            background-color: #f1f1f1;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 200px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .menu.open {
+            display: block;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .menu ul li {
+            padding: 10px 0;
+        }
+
+        .menu ul li a {
+            text-decoration: none;
+            color: #333;
+        }
 
         /* Responsive styles */
         @media (max-width: 768px) {
@@ -279,6 +340,34 @@
                         <li><a href="#contact">Contacto</a></li>
                         <li><a href="https://abogados-elias-y-pena.github.io/inicio/descargar-aplicacion/">Descargar Aplicación</a></li>
                     </ul>
+                    <button id="hamburgerBtn" class="hamburger-button" aria-label="Abrir menú" aria-expanded="false">
+                        <div class="hamburger-line line1"></div>
+                        <div class="hamburger-line line2"></div>
+                        <div class="hamburger-line line3"></div>
+                    </button>
+
+                    <nav id="menu" class="menu" aria-label="Menú principal">
+                        <ul class="nav-links">
+                            <li><a href="#home">Inicio</a></li>
+                            <li><a href="#practice-areas">Areas Especializadas</a></li>
+                            <li><a href="#about">Acerca de Nosotros</a></li>
+                            <li><a href="#contact">Contacto</a></li>
+                            <li><a href="https://abogados-elias-y-pena.github.io/inicio/descargar-aplicacion/">Descargar Aplicación</a></li>
+                        </ul>
+                    </nav>
+                    <script>
+                        const hamburgerBtn = document.getElementById('hamburgerBtn');
+                        const menu = document.getElementById('menu');
+
+                        hamburgerBtn.addEventListener('click', function() {
+                            this.classList.toggle('open');
+                            menu.classList.toggle('open');
+            
+                            const isOpen = this.classList.contains('open');
+                            this.setAttribute('aria-expanded', isOpen);
+                            this.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+                        });
+                    </script>
                 </nav>
             </header>    
         </section>
