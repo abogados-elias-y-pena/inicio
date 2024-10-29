@@ -290,6 +290,11 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
+    .center-grid {
+      display: grid;
+      place-items: center; /* Centra tanto horizontal como verticalmente */
+      height: 30vh; /* Ajusta la altura si quieres centrar en toda la pantalla */
+    }
 
         .menu.open {
             display: block;
@@ -349,11 +354,13 @@
 
                     <nav id="menu" class="menu" aria-label="Menú principal">
                         <ul class="nav-links">
+                            <section class="center-grid">
                             <li><a href="#home">Inicio</a></li>
                             <li><a href="#practice-areas">Areas Especializadas</a></li>
                             <li><a href="#about">Acerca de Nosotros</a></li>
                             <li><a href="#contact">Contacto</a></li>
                             <li><a href="https://abogados-elias-y-pena.github.io/inicio/descargar-aplicacion/">Descargar Aplicación</a></li>
+                            </section>
                         </ul>
                     </nav>
                     <script>
