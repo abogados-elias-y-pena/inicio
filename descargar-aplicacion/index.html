@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargar Aplicación</title>
+    <link rel="icon" href="https://abogados-elias-y-pena.github.io/Image2/logo.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container-1:last-of-type a {
+            color: white;
+            text-decoration: none; /* Sin subrayado por defecto */
+        }
+        .container-1:last-of-type a:hover {
+             color: white;
+            text-decoration: underline; /* Subrayado al pasar el ratón */
+        }
+        .container-2 {
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            height: 10vh; /* Altura del contenedor */
+            background-color: #1a1a1a;
+        }
+        .container-3:last-of-type a {
+            color: #1a1a1a;
+            text-decoration: none; /* Sin subrayado por defecto */
+        }
+        .container-3:last-of-type a:hover {
+             color: #1a1a1a;
+            text-decoration: underline; /* Subrayado al pasar el ratón */
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .container-4 {
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            display: none;
+        }
+        .container-5 {
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+            height: 30vh; /* Altura del contenedor */
+            background-color: white;
+        }
+        button-2 {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 1rem 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            color: #ac6100;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+
+        /* Hero section styles */
+        .hero {
+            background-image: url('https://rlzjlxjvwdxqgxjjqxwg.supabase.co/storage/v1/object/public/images/lawyer-hero.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+        }
+        .hero-content {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 2rem;
+            border-radius: 5px;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #1a1a1a;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #e6c200;
+        }
+
+        /* Practice areas styles */
+        .practice-areas {
+            padding: 4rem 0;
+            background-color: #f4f4f4;
+        }
+        .practice-areas h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .area-card {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .area-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* About section styles */
+        .about {
+            padding: 4rem 0;
+        }
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .about-image {
+            flex: 1;
+        }
+        .about-image img {
+            width: 50%;
+            border-radius: 5px;
+        }
+        .about-text {
+            flex: 1;
+        }
+
+        /* Contact form styles */
+        .contact {
+            padding: 4rem 0;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        .contact2 {
+            padding: 4rem 0;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+        
+        .contact h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-group textarea {
+            height: 150px;
+        }
+        .submit-button {
+            background-color: #ffd700;
+            color: #1a1a1a;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .submit-button:hover {
+            background-color: #e6c200;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #1a1a1a;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .about-content {
+                flex-direction: column;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+        <section id="09">
+            <header>
+                <nav class="container">
+                    <div class="logo">
+                        <img src="https://abogados-elias-y-pena.github.io/Image2/logo.png" alt="logo" width="75" height="75">
+                    </div>
+                    <ul class="nav-links">
+                        <li><a href="https://abogados-elias-y-pena.github.io/inicio/">Inicio</a></li>
+                        <li><a href="#crdownload">Android</a></li>
+                      <li><a href="#">Windows</a></li>
+                      <li><a href="#">MacOs</a></li>
+                      <li><a href="#">Linux</a></li>
+                    </ul>
+                </nav>
+            </header>    
+        </section>
+  
+      <main>
+          
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Descarga nuestra App</h1>
+                    <p>Estas aplicaciones serán muy similares a nuestra página web original.</p>
+                    <a href="#crdownload" class="cta-button">Descargar</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="crdownload" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="https://abogados-elias-y-pena.github.io/01/descarga.gif" alt="QR_Download">
+                    </div>
+                    <div class="container-2">
+                        <div class="about-text">
+                            <h2>Android</h2>
+                            <h4>Esta aplicación solo es compatible con Android 8+</h4>
+                            <a href="https://ai2.appinventor.mit.edu/b/hy9t" class="cta-button">Descargar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container-1">
+            <p>
+                <a href="https://programmer-hugo.github.io/about-me/" target="_blank">Hecho por Hugo Elias</a>
+            </p>
+            <p>&copy; 2025. Todos los Derechos Reservados. <a href="politica-de-seguridad-de-la-informacion/" target="_blank">Política de Seguridad de la Información</a></p>
+        </div>
+    </footer>
+</body>
+</html>
