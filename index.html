@@ -88,21 +88,6 @@
             font-size: 1.5rem;
             font-weight: bold;
         }
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-        .nav-links li {
-            margin-left: 1.5rem;
-        }
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .nav-links a:hover {
-            color: #ffd700;
-        }
 
         /* Hero section styles */
         .hero {
@@ -246,10 +231,67 @@
             text-align: center;
             padding: 1rem 0;
         }
-        /* Responsive styles */
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-links a:hover {
+            color: #ffd700;
+        }
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+        }
+        .hamburger-line {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 5px 0;
+            transition: all 0.3s ease-in-out;
+        }
+        .disable {
+            display: none;
+        }
         @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
             .nav-links {
                 display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: #1a1a1a;
+                padding: 1rem;
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            .hamburger.active .hamburger-line:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            .hamburger.active .hamburger-line:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active .hamburger-line:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
             }
             .about-content {
                 flex-direction: column;
@@ -271,6 +313,19 @@
                     <div class="logo">
                         <img src="https://abogados-elias-y-pena.github.io/Image2/logo.png" alt="logo" width="75" height="75">
                     </div>
+                    <ul class="nav-links">
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#practice-areas">Areas Especializadas</a></li>
+                        <li><a href="#about">Acerca de Nosotros</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                        <li><a href="https://abogados-elias-y-pena.github.io/inicio/descargar-aplicacion/">Descargar Aplicación</a></li>
+                    </ul>
+                    
+                    <button class="hamburger" aria-label="Menú de navegación">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
                     <ul class="nav-links">
                         <li><a href="#home">Inicio</a></li>
                         <li><a href="#practice-areas">Areas Especializadas</a></li>
@@ -425,5 +480,26 @@
             <p>&copy; 2025. Todos los Derechos Reservados. <a href="politica-de-seguridad-de-la-informacion/" target="_blank">Política de Seguridad de la Información</a></p>
         </div>
     </footer>
+
+    <a class="disable">Script del Hamburguer</a>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                navLinks.classList.toggle('show');
+            });
+
+            // Close menu when a link is clicked
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('show');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
