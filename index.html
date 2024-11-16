@@ -313,13 +313,6 @@
                     <div class="logo">
                         <img src="https://abogados-elias-y-pena.github.io/Image2/logo.png" alt="logo" width="75" height="75">
                     </div>
-                    <ul class="nav-links">
-                        <li><a href="#home">Inicio</a></li>
-                        <li><a href="#practice-areas">Areas Especializadas</a></li>
-                        <li><a href="#about">Acerca de Nosotros</a></li>
-                        <li><a href="#contact">Contacto</a></li>
-                        <li><a href="https://abogados-elias-y-pena.github.io/inicio/descargar-aplicacion/">Descargar Aplicación</a></li>
-                    </ul>
                     
                     <button class="hamburger" aria-label="Menú de navegación">
                         <span class="hamburger-line"></span>
@@ -351,7 +344,7 @@
         <section id="practice-areas" class="practice-areas">
             <div class="container-4">
                 <h2>Áreas Especializadas</h2>
-                    <select id="fruitSelect">
+                    <select id="areaSelect">
                         <option value="">Selecciona una área</option>
                         <option value="manzana">Área 1</option>
                         <option value="banana">Área 2</option>
@@ -388,7 +381,7 @@
                 </div>
 
                 <script>
-                    document.getElementById('fruitSelect').addEventListener('change', function() {
+                    document.getElementById('areaSelect').addEventListener('change', function() {
                     var containers = document.getElementsByClassName('container-5');
                     for (var i = 0; i < containers.length; i++) {
                         containers[i].style.display = 'none';
