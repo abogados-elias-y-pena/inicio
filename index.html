@@ -334,13 +334,11 @@
 
                 <script>
                     document.getElementById('fruitSelect').addEventListener('change', function() {
-                    // Ocultar todos los contenedores
                     var containers = document.getElementsByClassName('container-5');
                     for (var i = 0; i < containers.length; i++) {
                         containers[i].style.display = 'none';
                     }
 
-                    // Mostrar el contenedor seleccionado
                     var selectedValue = this.value;
                     if (selectedValue) {
                         var selectedContainer = document.getElementById(selectedValue + 'Container');
