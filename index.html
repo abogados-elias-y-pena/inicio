@@ -14,6 +14,9 @@
         .a1{
             color: white;
         }
+        .a2{
+            display: none;
+        }
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
@@ -318,6 +321,9 @@
             vertical-align: middle;
         }
         @media (max-width: 768px) {
+            .a2{
+                display: block;
+            }
             .hamburger {
                 display: block;
             }
@@ -409,7 +415,7 @@
                         <li><a href="#practice-areas">Areas Especializadas</a></li>
                         <li><a href="#about">Acerca de Nosotros</a></li>
                         <li><a href="#contact">Contacto</a></li>
-                        <li><a href="https://abogados-elias-y-pena.github.io/inicio/descargar-aplicacion/">Descargar Aplicación</a></li>
+                        <li><a class="a2" href="https://abogados-elias-y-pena.github.io/inicio/descargar-aplicacion/">Descargar Aplicación</a></li>
                     </ul>
                 </nav>
             </header>    
