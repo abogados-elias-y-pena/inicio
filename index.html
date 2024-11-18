@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elias y Peña Abogados</title>
+    <title>Elias y Peña | Abogados > Inicio</title>
     <link rel="icon" href="https://abogados-elias-y-pena.github.io/Image2/logo.png" type="image/x-icon">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+        .a1{
+            color: white;
         }
         body {
             font-family: Arial, sans-serif;
@@ -71,6 +74,12 @@
 
         /* Header styles */
         header {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 1rem 0;
+        }
+        /* Footer styles */
+        footer {
             background-color: #1a1a1a;
             color: #fff;
             padding: 1rem 0;
@@ -190,6 +199,14 @@
             text-align: center;
             margin-bottom: 2rem;
         }
+        .contact h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .contact h4 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
@@ -225,12 +242,20 @@
             background-color: #e6c200;
         }
 
-        /* Footer styles */
-        footer {
-            background-color: #1a1a1a;
+        .nav-links1 {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links1 li {
+            margin-left: 1.5rem;
+        }
+        .nav-links1 a {
             color: #fff;
-            text-align: center;
-            padding: 1rem 0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .nav-links1 a:hover {
+            color: #ffd700;
         }
         .nav-links {
             list-style: none;
@@ -287,6 +312,26 @@
         @media (max-width: 768px) {
             .hamburger {
                 display: block;
+            }
+            .nav-links1 {
+                list-style: none;
+                display: list-item;
+            }
+            .nav-links1 li {
+                margin-left: 1.5rem;
+                margin-top: 0.5rem;
+            }
+            .nav-links1 a {
+                color: #fff;
+                text-decoration: none;
+                transition: color 0.3s ease;
+                border-left: 2px solid rgb(129, 129, 129);
+                padding-left: 5px;
+            }
+            .nav-links1 a:hover {
+                color: #ffd700;
+                border-left: 2px solid #ffd700;
+                padding-left: 5px;
             }
             .nav-links {
                 display: none;
@@ -451,8 +496,8 @@
         <section id="contact" class="contact">
             <div class="container-3">
                 <h2>Contáctanos</h2>
-                <h3>Enviar Datos | Gmail | WhatsApp</h3>
-                <h4>Con * es obligatorio</h4>
+                <h3>Enviar Datos <span style="font-weight: bold;">|</span> Gmail <span style="font-weight: bold;">|</span> WhatsApp</h3>
+                <h4>Con <span style="font-weight: bold;">*</span> es obligatorio</h4>
                 <form class="contact-form" action="https://formspree.io/f/xnnqqpda" method="post">
                     <div class="form-group">
                         <label for="name">Nombre*</label>
@@ -498,15 +543,18 @@
             </div>
         </section>
     </main>
-
-    <footer>
-        <div class="container-1">
-            <p>
-                <a href="https://programmer-hugo.github.io/about-me/" target="_blank">Hecho por Hugo Elias</a>
-            </p>
-            <p>&copy; 2025. Todos los Derechos Reservados. <a href="politica-de-seguridad-de-la-informacion/" target="_blank">Política de Seguridad de la Información</a></p>
-        </div>
-    </footer>
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="https://abogados-elias-y-pena.github.io/Image2/logo.png" alt="logo" width="75" height="75">
+            </div>
+            <ul class="nav-links1">
+                <li><a href="https://programmer-hugo.github.io/about-me/" target="_blank">Hecho por Hugo Elias</a></li>
+                <li><a href="politica-de-seguridad-de-la-informacion/" target="_blank">Política de Seguridad de la Información</a></li>
+              <li><a>&copy; 2025. Todos los Derechos Reservados.</a></li>
+            </ul>
+        </nav>
+    </header>
   
     <script>
         document.addEventListener('DOMContentLoaded', function() {
