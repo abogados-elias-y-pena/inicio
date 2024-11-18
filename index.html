@@ -207,6 +207,14 @@
             text-align: center;
             margin-bottom: 2rem;
         }
+        .container-2 h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .contatc-form button {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
@@ -496,41 +504,39 @@
         <section id="contact" class="contact">
             <div class="container-3">
                 <h2>Contáctanos</h2>
-                <h3>Enviar Datos <span style="font-weight: bold;">|</span> Gmail <span style="font-weight: bold;">|</span> WhatsApp</h3>
-                <h4>Con <span style="font-weight: bold;">*</span> es obligatorio</h4>
-                <form class="contact-form" action="https://formspree.io/f/xnnqqpda" method="post">
-                    <div class="form-group">
-                        <label for="name">Nombre*</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Correo*</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">No. de Teléfono*</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="_status">Estado* [Disponible/Ocupado]</label>
-                        <input type="_status" id="status" name="_status">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Mensaje*</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-button">Enviar Mensaje</button>
-                </form>
-            </div>
-        </section>
-        <section id="contact-socials" class="contact2">
-            <div class="container-2">
-                <h2>O por nuestras Redes Sociales</h2>
+                <h3><span style="display: none;">Enviar Datos <span style="font-weight: bold;">|</span> </span>Gmail <span style="font-weight: bold;">|</span> WhatsApp</h3>
+                    <section style="display: none;">
+                        <h4>Con <span style="font-weight: bold;">*</span> es obligatorio</h4>
+                        <form class="contact-form" action="https://formspree.io/f/xnnqqpda" method="post">
+                            <div class="form-group">
+                                <label for="name">Nombre*</label>
+                                <input type="text" id="name" name="name" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo*</label>
+                                <input type="email" id="email" name="email" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">No. de Teléfono*</label>
+                                <input type="tel" id="phone" name="phone" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="_status">Estado* [Disponible/Ocupado]</label>
+                                <input type="_status" id="status" name="_status" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje*</label>
+                                <textarea id="message" name="message" disabled></textarea>
+                            </div>
+                            <button type="submit" class="submit-button">Enviar Mensaje</button>
+                        </form>
+                    </section>
             </div>
         </section>
         <section id="contact-socials" class="contact2">
             <div class="container-2">
                     <button-2>
+                        <h2>Nuestras Redes Sociales</h2>
                         <a href="https://mailto:h.eliass1017@gmail.com" target="_blank">
                             <img src="https://cdn.icon-icons.com/icons2/2631/PNG/512/gmail_new_logo_icon_159149.png" alt="Gmail Button" width="75" height="75">
                         </a>
