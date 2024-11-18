@@ -59,7 +59,6 @@
             display: none;
         }
         .container-5 {
-            display: flex;
             justify-content: center; /* Centra horizontalmente */
             align-items: center; /* Centra verticalmente */
             height: 30vh; /* Altura del contenedor */
@@ -88,7 +87,7 @@
             font-size: 1.5rem;
             font-weight: bold;
         }
-
+      
         /* Hero section styles */
         .hero {
             background-image: url('https://rlzjlxjvwdxqgxjjqxwg.supabase.co/storage/v1/object/public/images/lawyer-hero.jpg');
@@ -129,8 +128,10 @@
 
         /* Practice areas styles */
         .practice-areas {
-            padding: 4rem 0;
-            background-color: #f4f4f4;
+            display: block !important;
+            padding: 1rem 0;
+            border-top: 2px solid #dbdbdb;
+            border-bottom: 2px solid #dbdbdb;
         }
         .practice-areas h2 {
             text-align: center;
@@ -261,8 +262,27 @@
             margin: 5px 0;
             transition: all 0.3s ease-in-out;
         }
-        .disable {
-            display: none;
+        #info-container {
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        #framework-name {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #ac6100;
+            padding-bottom: 10px;
+        }
+        #framework-description {
+            font-size: 16px;
+            color: #34495e;
+            line-height: 1.6;
+        }
+        .framework-logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            vertical-align: middle;
         }
         @media (max-width: 768px) {
             .hamburger {
@@ -293,14 +313,27 @@
             .hamburger.active .hamburger-line:nth-child(3) {
                 transform: rotate(-45deg) translate(5px, -5px);
             }
+            .nav-links {
+                display: none;
+            }
             .about-content {
                 flex-direction: column;
+            }
+            .hero{
+                margin-top: 70px; /* Espacio hacia arriba */
+                margin-bottom: 70px; /* Espacio hacia abajo */
             }
             .hero h1 {
                 font-size: 2rem;
             }
             .hero p {
                 font-size: 1rem;
+            }
+            #framework-name {
+                font-size: 24px;
+            }
+            #framework-description {
+                font-size: 18px;
             }
         }
     </style>
@@ -313,7 +346,6 @@
                     <div class="logo">
                         <img src="https://abogados-elias-y-pena.github.io/Image2/logo.png" alt="logo" width="75" height="75">
                     </div>
-                    
                     <button class="hamburger" aria-label="Menú de navegación">
                         <span class="hamburger-line"></span>
                         <span class="hamburger-line"></span>
@@ -330,7 +362,7 @@
             </header>    
         </section>
         <main>
-        
+          
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
@@ -340,64 +372,66 @@
                 </div>
             </div>
         </section>
-        
+          
         <section id="practice-areas" class="practice-areas">
-            <div class="container-4">
-                <h2>Áreas Especializadas</h2>
-                    <select id="areaSelect">
-                        <option value="">Selecciona una área</option>
-                        <option value="manzana">Área 1</option>
-                        <option value="banana">Área 2</option>
-                        <option value="naranja">Área 3</option>
-                        <option value="fresa">Área 4</option>
-                    </select>
-        
-                <div id="manzanaContainer" class="container-5" style="display: none;">
-                    <div class="area-card">
-                        <h3>Área 1</h3>
-                        <p>Poner lo que sea</p>
-                    </div>
-                </div>
-   
-                <div id="bananaContainer" class="container-5" style="display: none;">
-                    <div class="area-card">
-                        <h3>Área 2</h3>
-                        <p>Poner lo que sea</p>
-                    </div>
-                </div>
- 
-                <div id="naranjaContainer" class="container-5" style="display: none;">  
-                    <div class="area-card">
-                        <h3>Área 3</h3>
-                        <p>Poner lo que sea</p>
-                    </div>
-                </div>
+            <div class="container">
+              <h2>Áreas Especializadas</h2>
+        <label for="framework-select"></label>
+        <select id="framework-select">
+            <option value="">Selecciona una Área</option>
+            <option value="react">Área 1</option>
+            <option value="vue">Área 2</option>
+            <option value="angular">Área 3</option>
+            <option value="svelte">Área 4</option>
+        </select>
+        <div id="info-container" style="display: none;">
+            <h2 id="framework-name"></h2>
+            <p id="framework-description"></p>
+        </div>
+    </div>
 
-                <div id="fresaContainer" class="container-5" style="display: none;">
-                    <div class="area-card">
-                        <h3>Área 4</h3>
-                        <p>Poner lo que sea</p>
-                    </div>
-                </div>
+    <script>
+        const select = document.getElementById('framework-select');
+        const infoContainer = document.getElementById('info-container');
+        const frameworkName = document.getElementById('framework-name');
+        const frameworkDescription = document.getElementById('framework-description');
 
-                <script>
-                    document.getElementById('areaSelect').addEventListener('change', function() {
-                    var containers = document.getElementsByClassName('container-5');
-                    for (var i = 0; i < containers.length; i++) {
-                        containers[i].style.display = 'none';
-                    }
+        const frameworkInfo = {
+            react: {
+                name: 'Área 1',
+                description: 'Poner lo que sea.',
+                logo: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=='
+            },
+            vue: {
+                name: 'Área 2',
+                description: 'Poner lo que sea.',
+                logo: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=='
+            },
+            angular: {
+                name: 'Área 3',
+                description: 'Poner lo que sea.',
+                logo: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=='
+            },
+            svelte: {
+                name: 'Área 4',
+                description: 'Poner lo que sea.',
+                logo: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=='
+            }
+        };
 
-                    var selectedValue = this.value;
-                    if (selectedValue) {
-                        var selectedContainer = document.getElementById(selectedValue + 'Container');
-                        if (selectedContainer) {
-                            selectedContainer.style.display = 'block';
-                            }
-                        }
-                    });
-                </script>
-            </div>
-        </section>
+        select.addEventListener('change', function() {
+            const selectedFramework = this.value;
+            if (selectedFramework) {
+                const info = frameworkInfo[selectedFramework];
+                frameworkName.innerHTML = `<img src="${info.logo}" alt="${info.name} logo" class="framework-logo">${info.name}`;
+                frameworkDescription.textContent = info.description;
+                infoContainer.style.display = 'block';
+            } else {
+                infoContainer.style.display = 'none';
+            }
+        });
+    </script>
+          </section>
 
         <section id="about" class="about">
             <div class="container">
@@ -434,7 +468,7 @@
                     </div>
                     <div class="form-group">
                         <label for="_status">Estado* [Disponible/Ocupado]</label>
-                        <input type="_status" id="status" name="_status" optional>
+                        <input type="_status" id="status" name="_status">
                     </div>
                     <div class="form-group">
                         <label for="message">Mensaje*</label>
@@ -444,12 +478,12 @@
                 </form>
             </div>
         </section>
-        <section id="contact2" class="contact2">
+        <section id="contact-socials" class="contact2">
             <div class="container-2">
                 <h2>O por nuestras Redes Sociales</h2>
             </div>
         </section>
-        <section id="contact2" class="contact2">
+        <section id="contact-socials" class="contact2">
             <div class="container-2">
                     <button-2>
                         <a href="https://mailto:h.eliass1017@gmail.com" target="_blank">
@@ -473,8 +507,7 @@
             <p>&copy; 2025. Todos los Derechos Reservados. <a href="politica-de-seguridad-de-la-informacion/" target="_blank">Política de Seguridad de la Información</a></p>
         </div>
     </footer>
-
-    <a class="disable">Script del Hamburguer</a>
+  
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const hamburger = document.querySelector('.hamburger');
